@@ -19,14 +19,15 @@ You will also need to download the current snapshot of the absorption (catalog d
 
 ### An extremely simple pyARTSinterface for two tasks
 
-ARTS is general and flexible and can be somewhat involved to use. Module `pyarts_utils` includes two functions: 
+ARTS is general and flexible and can be somewhat involved to use. Module `pyarts_utils` includes three functions: 
 - `calculate_absxsec_wn()` computes the spectrally-resolved absorption cross-section ($m^2$ per molecule) across a 
 user-specfied range of wavenumbers for a user-specified set of gases.
-- `calc_olr_wn()` computes the spectrally-resolved top-of-atmosphere outgoing longwave radiation. To my chagrin I have been unable to 
-figure out how to specify arbitrary atmospheric profiles; instead you'll use a standard profile in which you can change the temperature 
-uniformly and/or scale the carbon dioxide concentration. 
+- `calc_olr_wn()` computes the spectrally-resolved top-of-atmosphere outgoing longwave radiation. 
+- `create_arts_atm()` creates the representation of the atmosphere required by `calc_olr_wn()` from vectors 
+of temperature and pressure and a dictionary of gas volume mixing rates (keys are chemical formulae like `"H2O"`, values are 
+volume mixing ratios)
 
-Both functions return wavenumber and the desired result (i.e. 'wn, beta = calculate_absxsec_wn()'). Both need the 
+Both computational functions return wavenumber and the desired result (i.e. 'wn, beta = calculate_absxsec_wn()'). Both need the 
 root location of the absorption catalog supplied as a `pathlib.Path()` in argument `basefile.` The default spectral resolution is relatively 
 coarse. 
 
