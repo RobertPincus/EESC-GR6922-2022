@@ -8,7 +8,7 @@ given at the University of Hamburg by Manfred Brath, Oliver Lemke, Stefan Buehle
 modules in turn wrap calls to `pyarts`. You'll need to install `pyarts` and its dependencies including `typhon` (utilities
 developed by the same group). 
 
-I suggest using a conda-based package manager -- I like (mamba)[https://mamba.readthedocs.io/] -- to create a virtual environment. 
+I suggest using a conda-based package manager -- I like [mamba](https://mamba.readthedocs.io/) -- to create a virtual environment. 
 `pyarts` and `typhon` are both available through the `rttools` channel, or you may use the `environment.yml` file in this directory, i.e. 
 ```
 mamba env create -f environment.yml
