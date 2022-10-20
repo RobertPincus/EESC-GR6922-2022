@@ -27,6 +27,15 @@ These problems are  ambitious and open-ended. My hope is that you'll get a lot o
 
 As always, please surround your figures and calculations with discussion. 
 
+\section{Creating idealized profiles}
+
+Write a small bit of Python to create idealized profiles of temperature, pressure, and water vapor mixing ratio on a discrete grid given a surface temperature. One possible idealization is a troposphere with constant relative humidity following a moist adiabat extending from a surface temperature to $T = 220 \si{\kelvin}$, with an isothermal stratosphere above this. You can make another idealization but should explain your reasoning. Python packages like NCAR's {\tt metpy} may be useful in constructing these profiles. 
+
+\begin{itemize}
+\item On a single panel plot temperature and water vapor mixing as a function of pressure for several values of surface temperature. 
+\item On a single panel plot the integrated water vapor path as a function of (air) temperature for several values of surface temperature. 
+\end{itemize}
+
 \section{Line shapes and atmospheric opacity}
 
 We've learned how pressure and temperature broadening affect individual absorption lines. This problem illustrates how broadening affects the column-integrated opacity of (simplified) atmospheres. 
@@ -37,7 +46,7 @@ We've learned how pressure and temperature broadening affect individual absorpti
 
 \item Use {\tt calculate\_absxsec\_wn()}  to compute the spectrally-resolved absorption cross-section  for water vapor under near-surface and stratospheric conditions. It may be most interesting to focus on one spectral region dominated by rotational bands (say around 500  \si{\per\centi\meter}), another in the water vapor window (800-1200 \si{\per\centi\meter}), and a third in a spectral region dominated by vibration-rotation lines (say 1300  \si{\per\centi\meter}). 
 
-\item Compute the vertically-integrated optical depth due to water vapor and carbon dioxide in an idealized atmosphere. One possible idealization is a troposphere with constant relative humidity following a moist adiabat extending from a surface temperature to $T = 220 \si{\kelvin}$, with an isothermal stratosphere above this. You can make another idealization but should explain your reasoning. Python packages like NCAR's {\tt metpy} may be useful in constructing these profiles. You'll need to discretize the atmosphere in the vertical in order to capture the pressure and temperature broadening, and you'll need to convert from cross-sections to total extinction by computing the total number of molecules in each layer. Make plots of both the spectrally-resolved optical depth (a log scale will be helpful) and the transmissivity for a surface temperature representative of the tropics and another of the high latitudes. You may find it useful to double-check against \url{http://eodg.atm.ox.ac.uk/ATLAS/zenith-absorption}. 
+\item Compute the vertically-integrated optical depth due to water vapor and carbon dioxide in your idealized atmosphere. Vertical variations in temperature and pressure will change the spectral absorption via  line  broadening, and you'll need to convert from cross-sections to total extinction by computing the total number of molecules in each layer. Make plots of both the spectrally-resolved optical depth (a log scale will be helpful) and the transmissivity for a surface temperature representative of the tropics and another of the high latitudes. You may find it useful to double-check against \url{http://eodg.atm.ox.ac.uk/ATLAS/zenith-absorption}. 
 
 \end{enumerate}
 %%%%%%%%%%%%%%%%%
