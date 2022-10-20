@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx,times,natbib,url,setspace,color,wrapfig,pdfpages,xcolor}
+\usepackage[version=3]{mhchem}
+\usepackage{siunitx}
+
+%\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,mathabx}
+\usepackage{parskip}
+% Margins
+\setlength{\topmargin}{-0.55in}
+\setlength{\oddsidemargin}{-0.1in}
+\setlength{\textwidth}{6.8in}
+\setlength{\textheight}{9.0in}
+
+%%%%%%%%%%%%%%%%%
+\title{EESC GR6922: Atmospheric Radiation, Fall 2022 \\ Homework 2, October 11}
+\author{Robert Pincus} 
+\date{\today}
+
+%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+%%%%%%%%%%%%%%%%%
+\section{Two hands-on problems}
+
+The main DEES office on the fifth floor of Schemmerhorn has a few infrared thermometers you can borrow, as well as some sheets of transparency material. You can check ahead by emailing Kaleigh Matthews (kaleighm@ldeo.columbia.edu) and/or Anastasia  Yankopoulos (aty2113@columbia.edu).
+
+\begin{enumerate}
+
+\item[a.] Use the thermometer to measure the apparent temperature of the sky as a function of the polar angle, i.e. the angle from directly overhead to the horizon. If weather permits make measurements in both clear and cloudy skies. It might also be interesting to compare day and night. Plot the data and explain the signal. 
+
+\item[b.] Transparency material is not actually so transparent in the infrared. Use the infrared thermometer to estimate the band-integrated transmissivity and apparent optical thickness of a single sheet of transparency material.  
+
+\end{enumerate}
+%%%%%%%%%%%%%%%%%
+\section{Radiative equilibrium}
+
+In class we determined the temperature profile $(T(\tau)$ for a grey atmosphere in radiative equilibrium, i.e. with no radiative heating anywhere. Building on the class results:
+
+\begin{enumerate}
+
+\item[a.] Correct my derivation in class to show that total flux $F^- + F^+ = OLR \times (1 + \tau) = 2 \sigma T^4$ (not $OLR \times (1 + \tau)$ as I said). Where did I go wrong? 
+
+\item[b.] Determine the up- and down-welling fluxes $F^+(\tau)$ and  $F^-(\tau)$. What is the downwelling flux at the surface $F^-(\tau^*)$? What is the temperature of the air at the surface? 
+
+\item[c.] Assume that the surface is in energy balance with incoming solar radiation $S_0$, a proportion $\alpha$ of which is reflected. What is the surface temperature? Plot the surface and surface air temperatures from $\tau^* = 0$ to $\infty \approx 3$. 
+
+\item[d.] If there was no surface -- say, on a gas giant planet -- would an atmosphere in radiative equilibrium be unstable to convection? Determine the logarithmic lapse rate $\frac{d\ln T}{d\ln p}$ for an atmosphere in radiative equilibrium. You may assume that $\tau = \tau^*(p/p_0)^{\beta}$ (this is the unit-lessJeevanjee $beta$, not the extinction coefficient). What is the condition for stability? Recall that the dry adiabatic lapse rate of the atmosphere 
+is $\frac{d\ln T}{d\ln p} = -R_d/c_p$. 
+\end{enumerate}
+
+\end{document}

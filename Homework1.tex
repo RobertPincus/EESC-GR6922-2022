@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx,times,natbib,url,setspace,color,wrapfig,pdfpages,xcolor}
+\usepackage[version=3]{mhchem}
+\usepackage{siunitx}
+
+%\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,mathabx}
+\usepackage{parskip}
+% Margins
+\setlength{\topmargin}{-0.55in}
+\setlength{\oddsidemargin}{-0.1in}
+\setlength{\textwidth}{6.8in}
+\setlength{\textheight}{9.0in}
+
+%%%%%%%%%%%%%%%%%
+\title{EESC GR6922: Atmospheric Radiation, Fall 2022 \\ Homework 1, due Sept 27 }
+\author{Robert Pincus} 
+\date{\today}
+
+%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+%%%%%%%%%%%%%%%%%
+\section{Electromagnetic waves}
+We showed in class that the (complex) electric field $\tilde{\bf E}$ and magnetic field $\tilde{\bf B}$ in a vacuum with no free charge satisfy the wave equation
+\begin{equation} \label{eq:wave-eq}
+\nabla^2  \tilde{\bf E} = \frac{1}{c^2}\frac{\partial^2 \tilde{\bf E} }{\partial t^2}
+\end{equation}
+I suggested that a particularly useful set of solutions could be built up using harmonic plane waves such as
+\begin{equation} \label{eq:em-fields} 
+\tilde{\bf E} = \tilde{\bf E}_0 e^{i(k z - \omega t)}, \tilde{\bf B} = \tilde{\bf B}_0 e^{i(k z - \omega t)}
+\end{equation} 
+
+\begin{itemize} 
+\item Show that the electric field in (\ref{eq:em-fields}) satisfies the wave equation and Maxwell's equations. In which direction is this wave travelling?
+\item Using Maxwell’s equations for divergence, show that electromagnetic waves must be transverse, that is, that the electric and magnetic fields must be perpendicular to the direction of propagation.
+\item Use Maxwell’s equations for curl to show that the electric and magnetic fields are in phase with each other and are mutually perpendicular. It may be easiest to show that
+\begin{equation*}
+\tilde{\bf B} =  \frac{k}{\omega} (\hat{\bf k} \times \tilde{\bf E})
+\end{equation*}
+where $\hat{\bf k}$ is the unit vector pointing in the $z$ direction. 
+\end {itemize} 
+
+%%%%%%%%%%%%%%%%%
+\section{Blackbody radiation}
+
+In class we derived the Planck function describing blackbody spectral intensity
+\begin{equation}\label{eq:Planck-function}
+ B_{\nu}(T) = \frac{2 h \nu^3}{c^2} \frac{1}{e^{h \nu/{k_B T}} - 1} 
+\end{equation} 
+Blackbody emission is isotropic so the flux emitted by a black body is $F_{\nu}(T) = \pi B_{\nu}(T)$.
+
+Given this equation you're now able to close one more term in the toy climate model I introduced on the first day of class, namely the ``solar constant'', i.e. the spectrally-integrated flux (density) of incoming solar radiation at the top of the atmosphere, which is about $S_0 = 1361 \si{\watt\per\square\meter}$ when the sun is overhead. Express the solar constant in terms of the temperature of the sun's photosphere (the outermost layer, where sunlight originates) and any relevant sizes, distances, etc. 
+%%%%%%%%%%%%%%%%%
+\section{Solar and terrestrial radiation}
+
+\begin{itemize}
+\item Plot $F_{\nu}(T)$ in units of $\si{\watt\second\per\square\meter}$ for the temperatures of the earth and the sun. Make a similar plot after normalizing by the spectrally-integrated flux. 
+\item Re-express (\ref{eq:Planck-function}) as a function of wavelength and make the same plots. 
+\item Derive an expression for the wavelength at which a blackbody emits the most radiation. This relationship is called Wien's law, and it may be solved numerically or (I believe) via the Lambert W function. 
+\item  At what wavelength does the sun emit the most radiation? What about the earth? 
+\item What is the spectral intensity emitted by the sun at the wavelength at which the earth emits the most? What is the spectral intensity emitted by the earth at the wavelength at which the sun emits the most? 
+\end{itemize} 
+
+%%%%%%%%%%%%%%%%%
+\section{Brightness temperature }
+
+\begin{itemize}
+\item Derive an expression for the {\it brightness temperature} $T_b$, meaning the temperature of a blackbody that would emit to match an observation of spectral intensity $\tilde{I}_{\nu}$. 
+\item What is the spectral flux emitted by the earth at $\lambda = 10 \si{\micro\meter}$? What is the spectral flux received by the earth from the sun at $\lambda = 10 \si{\micro\meter}$? 
+\item What is the spectral {\it intensity} received by the earth from the sun at $\lambda = 10 \si{\micro\meter}$ when the sun is overhead? 
+\end{itemize}
+%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%
+% Show that max heating rate from direct solar beam is where tau = 1
+
+\end{document}

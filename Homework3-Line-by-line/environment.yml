@@ -1,0 +1,14 @@
+#
+# Python modules for running line-by-line calculations 
+#
+name: pyarts
+
+channels:
+  - rttools
+  - conda-forge
+  - nodefaults
+
+dependencies:
+  - python=3.9
+  - pyarts
+  - typhon
