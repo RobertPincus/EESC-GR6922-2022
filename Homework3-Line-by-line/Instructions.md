@@ -15,7 +15,7 @@ mamba env create -f environment.yml
 ``` 
 You'll likely want to add other plotting and analysis software to this environment to make plots, etc. 
 
-You will also need to download the current snapshot of the absorption (catalog data)[https://www.radiativetransfer.org/misc/download/unstable/] (the 'cat' file, not the 'xml' file). You will need to provide the downloaded location to the codes. 
+You will also need to download the current snapshot of the absorption [catalog data](https://www.radiativetransfer.org/misc/download/unstable/) (the 'cat' file, not the 'xml' file). You will need to provide the downloaded location to the codes. 
 
 ### An extremely simple pyARTSinterface for two tasks
 
