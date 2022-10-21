@@ -16,8 +16,7 @@ wn, beta = calculate_absxsec_wn(H2O_plus,
 pressure = np.logspace(np.log10(101300),np.log10(10000),20)
 T = np.linspace(290,200, len(pressure))
 vmr_h2o=0.01*np.exp(-np.linspace(0,16000, len(pressure))/2000)
-vmr_co2=np.ones(np.size(pressure))*400/1e6
-vmr_co2=vmr_co2[0]
+vmr_co2=400e-6
 atm = create_arts_atm(pressure, T, {"h2o":vmr_h2o, "co2":vmr_co2})
 
 wn, olr  = calc_olr_wn(atm, arts_data_root = arts_data_root)
