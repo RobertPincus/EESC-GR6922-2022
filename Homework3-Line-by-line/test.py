@@ -2,9 +2,12 @@ from pyarts_utils      import calculate_absxsec_wn, H2O_plus, create_arts_atm, c
 from pathlib import Path 
 import numpy as np
 
+
+arts_data_root = Path("/Users/robert/Codes/arts-cat-data")
+
 wn, beta = calculate_absxsec_wn(H2O_plus, 
                                 wn_min = 800, wn_max = 1000, wn_num = 1000, 
-                                arts_data_root = Path("/Users/robert/Codes/arts-cat-data"))
+                                arts_data_root = arts_data_root)
 
 
 #
@@ -17,5 +20,5 @@ vmr_co2=np.ones(np.size(pressure))*400/1e6
 vmr_co2=vmr_co2[0]
 atm = create_arts_atm(pressure, T, {"h2o":vmr_h2o, "co2":vmr_co2})
 
-wn, olr  = calc_olr_wn(atm, arts_data_root = Path("/Users/robert/Codes/arts-cat-data"))
+wn, olr  = calc_olr_wn(atm, arts_data_root = arts_data_root)
 print("Integrated OLR is ", np.trapz(olr, wn))
