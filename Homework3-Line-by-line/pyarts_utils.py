@@ -42,9 +42,7 @@ def create_arts_atm(pressure, temperature, gas_concs):
     atmfield = GriddedField4()
 
     ## set grids ========================================================
-    type_grid = ["T", "z"]
-    for gas in gas_concs.keys():
-        type_grid.append("abs_species-" + str(gas).upper())
+    type_grid = ["T", "z"] + [f"abs_species-{gas.upper()}" for gas in gas_concs.keys()]
     atmfield.grids = [type_grid, pressure, [], []]
 
     ## set data =========================================================
@@ -58,8 +56,8 @@ def create_arts_atm(pressure, temperature, gas_concs):
         pressure[0] / pressure
     )  # scale height in [m]
 
-    for i, gas in enumerate(gas_concs.keys()):
-        atmfield.data[i + 2, :, 0, 0] = gas_concs[gas]
+    for i, gas in enumerate(gas_concs.keys(), start=2):
+        atmfield.data[i, :, 0, 0] = gas_concs[gas]
 
     return atmfield
 
@@ -97,7 +95,7 @@ def calculate_absxsec_wn(
         temperature=temperature,
         vmr=vmr,
         basename=str(arts_data_root.joinpath("lines")) + "/",
-        **fgrid
+        **fgrid,
     )
     return (freq / (c * 100), beta)
 
