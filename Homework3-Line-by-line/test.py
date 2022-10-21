@@ -2,7 +2,6 @@ from pyarts_utils import calculate_absxsec_wn, H2O_plus, create_arts_atm, calc_o
 from pathlib import Path
 import numpy as np
 
-
 arts_data_root = Path("/Users/lkluft/work/catalogue/arts-cat-data")
 
 wn, beta = calculate_absxsec_wn(
