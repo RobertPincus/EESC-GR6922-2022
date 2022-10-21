@@ -3,14 +3,16 @@ import pyarts.workspace
 from typhon import physics as phys
 
 
-def calc_olr(atmfield,
-             nstreams=10,
-             fnum=300,
-             fmin=1.0,
-             fmax=75e12,
-             species='default',
-             basename = "lines/",
-             verbosity=0):
+def calc_olr(
+    atmfield,
+    nstreams=10,
+    fnum=300,
+    fmin=1.0,
+    fmax=75e12,
+    species="default",
+    basename="lines/",
+    verbosity=0,
+):
     """Calculate the outgoing-longwave radiation for a given atmosphere.
 
     Parameters:
@@ -45,11 +47,13 @@ def calc_olr(atmfield,
     ws.cloudboxOff()
 
     # Definition of species
-    if species == 'default':
-        ws.abs_speciesSet(species=[
-            "H2O, H2O-SelfContCKDMT350, H2O-ForeignContCKDMT350",
-            "CO2, CO2-CKDMT252",
-        ])
+    if species == "default":
+        ws.abs_speciesSet(
+            species=[
+                "H2O, H2O-SelfContCKDMT350, H2O-ForeignContCKDMT350",
+                "CO2, CO2-CKDMT252",
+            ]
+        )
     else:
         ws.abs_speciesSet(species=species)
 
@@ -114,7 +118,7 @@ def calc_olr(atmfield,
     return ws.f_grid.value[:], olr
 
 
-def Change_T_with_RH_const(atmfield, DeltaT=0.):
+def Change_T_with_RH_const(atmfield, DeltaT=0.0):
     """Change the temperature everywhere in the atmosphere by a value of DeltaT
        but without changing the relative humidity. This results in a changed
        volume mixing ratio of water vapor.
