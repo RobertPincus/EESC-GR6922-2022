@@ -6,25 +6,28 @@ import re
 
 import numpy as np
 import pyarts
-from   pathlib import Path
+from pathlib import Path
+
 
 def tag2tex(tag):
     """Replace all numbers in a species tag with LaTeX subscripts."""
     return re.sub("([a-zA-Z]+)([0-9]+)", r"\1$_{\2}$", tag)
 
 
-def calculate_absxsec(species='H2O, H2O-SelfContCKDMT350, H2O-ForeignContCKDMT350',
-                      pressure=800e2,
-                      temperature=300.0,
-                      fmin=10e9,
-                      fmax=2000e9,
-                      fnum=10_000,
-                      lineshape="LP",
-                      normalization="RQ",
-                      verbosity=0,
-                      vmr=0.05,
-                      basename = "lines/",
-                      lines_off=0):
+def calculate_absxsec(
+    species="H2O, H2O-SelfContCKDMT350, H2O-ForeignContCKDMT350",
+    pressure=800e2,
+    temperature=300.0,
+    fmin=10e9,
+    fmax=2000e9,
+    fnum=10_000,
+    lineshape="LP",
+    normalization="RQ",
+    verbosity=0,
+    vmr=0.05,
+    basename="lines/",
+    lines_off=0,
+):
     """Calculate absorption cross sections.
 
     Parameters:
@@ -88,9 +91,9 @@ def calculate_absxsec(species='H2O, H2O-SelfContCKDMT350, H2O-ForeignContCKDMT35
     ws.stokes_dim = 1
 
     # Setting the pressure, temperature and vmr
-    ws.rtp_pressure    = float(pressure)  # [Pa]
+    ws.rtp_pressure = float(pressure)  # [Pa]
     ws.rtp_temperature = float(temperature)  # [K]
-    ws.rtp_vmr         = np.array([vmr])  # [VMR]
+    ws.rtp_vmr = np.array([vmr])  # [VMR]
     ws.Touch(ws.rtp_nlte)
 
     # isotop
@@ -106,6 +109,7 @@ def calculate_absxsec(species='H2O, H2O-SelfContCKDMT350, H2O-ForeignContCKDMT35
     # Convert abs coeff to cross sections on return
     number_density = pressure * vmr / (pyarts.arts.constant.k * temperature)
 
-    return (ws.f_grid.value.value.copy(),
-            ws.propmat_clearsky.value.data.value[0, 0, :, 0].copy() /
-            number_density)
+    return (
+        ws.f_grid.value.value.copy(),
+        ws.propmat_clearsky.value.data.value[0, 0, :, 0].copy() / number_density,
+    )
