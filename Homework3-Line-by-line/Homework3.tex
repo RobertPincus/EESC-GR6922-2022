@@ -32,8 +32,8 @@ As always, please surround your figures and calculations with discussion.
 Write a small bit of Python to create idealized profiles of temperature, pressure, and water vapor mixing ratio on a discrete grid given a surface temperature. One possible idealization is a troposphere with constant relative humidity following a moist adiabat extending from a surface temperature to $T = 220 \si{\kelvin}$, with an isothermal stratosphere above this. You can make another idealization but should explain your reasoning. Python packages like NCAR's {\tt metpy} may be useful in constructing these profiles. 
 
 \begin{itemize}
-\item On a single panel plot temperature and water vapor mixing as a function of pressure for several values of surface temperature. 
-\item On a single panel plot the integrated water vapor path as a function of (air) temperature for several values of surface temperature. 
+\item On a single panel plot temperature and water vapor mixing as a function of pressure for several values of surface temperature. It'll look more like a sounding if you put pressure (or its logarithm) on the $y$-axis. 
+\item On a single panel plot the integrated water vapor path as a function of (air) temperature for several values of surface temperature. It might be more intuitive to have air temperature on the $y$-axis, increasing downwards as it would in the atmosphere. 
 \end{itemize}
 
 \section{Line shapes and atmospheric opacity}
