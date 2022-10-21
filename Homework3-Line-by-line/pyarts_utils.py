@@ -106,20 +106,16 @@ def calc_olr_wn(
     wn_min=1e-9,
     wn_max=3250.0,
     wn_num=10001,
-    delta_T=0.0,
-    CO2_scale=1.0,
     arts_data_root=Path("./arts-cat-data"),
 ):
     """Wrapper for olr_module.py:calc_olr from ARTS lectures
         Calculates spectrally-resolved OLR for the (potentially-modified) AFGL mid-latitude summer atmosphere
 
     Parameters:
-        atm: variable of type pyarts.GriddedField4
+        atm: variable of type pyarts.arts.GriddedField4
         wn_min (float): Minimum wavenumber [cm-1].
         wn_max (float): Maximum frequency [cm-1].
         wn_num (int): Number of frequency grid points.
-        delta_T (float): temperature change uniformly added to profiles; relative humidity is conserved
-        CO2_scale (float): multiplier for CO2 concentrations
         arts_data_root (pathlib.Path): Root location of arts-cat-data
 
     Returns:
